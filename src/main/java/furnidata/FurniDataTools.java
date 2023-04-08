@@ -24,19 +24,6 @@ public class FurniDataTools {
             "hole", "hole2", "hole1x1", "hole3", "hole4", "hole1x1test", "pet_breeding_bear", "pet_breeding_terrier",
             "pet_breeding_dog", "pet_breeding_pig", "pet_breeding_cat"));
 
-    private static Map<String, String> codeToDomainMap = new HashMap<>();
-    static {
-        codeToDomainMap.put("br", ".com.br");
-        codeToDomainMap.put("de", ".de");
-        codeToDomainMap.put("es", ".es");
-        codeToDomainMap.put("fi", ".fi");
-        codeToDomainMap.put("fr", ".fr");
-        codeToDomainMap.put("it", ".it");
-        codeToDomainMap.put("nl", ".nl");
-        codeToDomainMap.put("tr", ".com.tr");
-        codeToDomainMap.put("us", ".com");
-    }
-
     private String countryCode;
     private volatile boolean isReady = false;
 
@@ -86,11 +73,12 @@ public class FurniDataTools {
     }
 
     private String furnidataUrl() {
-        if (countryCode.equals("s2")) {
+        return "https://assets.habboon.pw/nitro//gamedata/FurnitureData.json";
+        /*if (countryCode.equals("s2")) {
             return "https://sandbox.habbo.com/gamedata/furnidata_json/1";
         }
 
-        return String.format("https://www.habbo%s/gamedata/furnidata_json/1", codeToDomainMap.get(countryCode));
+        return String.format("https://www.habbo%s/gamedata/furnidata_json/1", codeToDomainMap.get(countryCode));*/
     }
 
     public boolean isReady() {
